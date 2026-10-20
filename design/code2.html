@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parlementaria Edisi 81 - Sekretariat DPRD Kota Tangerang</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Editorial Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              crimson: '#B3131B',
+              crimsonDark: '#8F0E15',
+              crimsonLight: '#D32029',
+              darkBg: '#18181b',
+              panelBg: '#212124',
+              pagePaper: '#FCFCFC'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Merriweather"', 'serif'],
+            display: ['"Cinzel"', 'serif']
+          },
+          boxShadow: {
+            'book-spread': '0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 40px rgba(0, 0, 0, 0.55)',
+            'page-inset-left': 'inset -12px 0 16px -8px rgba(0, 0, 0, 0.22)',
+            'page-inset-right': 'inset 12px 0 16px -8px rgba(0, 0, 0, 0.22)'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom Styles for Flipbook Realistic Details -->
+<style data-purpose="flipbook-visuals">
+    /* Center Spine fold shadow gradient */
+    .spine-crease {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 32px;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 25;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.28) 0%,
+        rgba(0, 0, 0, 0.08) 35%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(0, 0, 0, 0.08) 65%,
+        rgba(0, 0, 0, 0.28) 100%
+      );
+    }
+
+    /* Subtle paper texture overlay */
+    .paper-texture {
+      background-image: radial-gradient(#f0eee8 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+
+    /* Drop-cap editorial letter */
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 3.4rem;
+      line-height: 0.82;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      color: #B3131B;
+    }
+
+    /* Thumbnail scrollbar styling */
+    .thumbnail-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .thumbnail-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 9999px;
+    }
+    .thumbnail-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+    }
+    .thumbnail-scroll::-webkit-scrollbar-thumb:hover {
+      background: #B3131B;
+    }
+  </style>
+</head>
+<body class="bg-[#19191d] text-gray-200 min-h-screen flex flex-col font-sans select-none overflow-hidden antialiased">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 bg-[#212126]/95 border-b border-white/10 px-4 md:px-6 flex items-center justify-between shrink-0 z-30 shadow-md backdrop-blur-md">
+<!-- Back Button & Edition Details -->
+<div class="flex items-center space-x-4">
+<button class="flex items-center space-x-2 bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white px-3.5 py-1.5 rounded-full border border-white/10 transition-colors text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-crimson/50" data-purpose="btn-back" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Kembali</span>
+</button>
+<div class="h-5 w-px bg-white/15 hidden sm:block"></div>
+<div>
+<h1 class="text-white font-semibold text-base md:text-lg leading-tight tracking-tight flex items-center gap-2">
+          Parlementaria Edisi 81
+          <span class="text-[11px] font-normal tracking-wide px-2 py-0.5 rounded bg-brand-crimson/20 border border-brand-crimson/40 text-rose-300 hidden lg:inline-block">2026 / Triwulan I</span>
+</h1>
+<p class="text-xs text-gray-400 hidden sm:block">Sekretariat Dewan Perwakilan Rakyat Daerah Kota Tangerang</p>
+</div>
+</div>
+<!-- Reader Action Toolbar -->
+<div class="flex items-center space-x-1 sm:space-x-2">
+<!-- Search Button -->
+<button class="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white px-3 py-1.5 rounded-md border border-white/5 text-xs md:text-sm font-medium transition" data-purpose="action-search" id="btnSearch" title="Cari Kata Kunci" type="button">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-4.35-4.35M16.65 11a5.65 5.65 0 11-11.3 0 5.65 5.65 0 0111.3 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden md:inline">Cari</span>
+</button>
+<!-- Zoom Controls -->
+<div class="flex items-center bg-white/5 rounded-md border border-white/5 p-0.5">
+<button class="p-1.5 text-gray-300 hover:text-white hover:bg-white/10 rounded transition" data-purpose="action-zoom-out" id="btnZoomOut" title="Perkecil (-)" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20 12H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-[11px] px-1.5 font-mono text-gray-400">100%</span>
+<button class="p-1.5 text-gray-300 hover:text-white hover:bg-white/10 rounded transition" data-purpose="action-zoom-in" id="btnZoomIn" title="Perbesar (+)" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Share Button -->
+<button class="hidden sm:flex items-center gap-1.5 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white px-3 py-1.5 rounded-md border border-white/5 text-xs md:text-sm font-medium transition" data-purpose="action-share" id="btnShare" title="Bagikan Tautan" type="button">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Bagikan</span>
+</button>
+<!-- Download PDF (Crimson Accent) -->
+<button class="flex items-center gap-1.5 bg-brand-crimson hover:bg-brand-crimsonDark text-white px-3.5 py-1.5 rounded-md font-semibold text-xs md:text-sm shadow-sm transition hover:shadow-red-950/40" data-purpose="action-download" id="btnDownload" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Unduh</span>
+</button>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: FlipbookStage -->
+<main class="flex-1 relative flex items-center justify-center p-2 sm:p-6 overflow-hidden">
+<!-- Previous Spread Floating Arrow -->
+<button aria-label="Halaman Sebelumnya" class="absolute left-3 md:left-8 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/60 hover:bg-brand-crimson text-white/80 hover:text-white border border-white/10 hover:border-brand-crimson flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-2xl backdrop-blur-md focus:outline-none" id="prevPageBtn" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Next Spread Floating Arrow -->
+<button aria-label="Halaman Selanjutnya" class="absolute right-3 md:right-8 z-30 w-11 h-11 md:w-13 md:h-13 rounded-full bg-black/60 hover:bg-brand-crimson text-white/80 hover:text-white border border-white/10 hover:border-brand-crimson flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-2xl backdrop-blur-md focus:outline-none" id="nextPageBtn" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Two-Page Magazine Spread Container -->
+<div class="relative w-full max-w-[1080px] aspect-[1.48/1] max-h-[82vh] bg-white rounded-sm shadow-book-spread flex overflow-hidden border border-neutral-300/40 select-text" data-purpose="magazine-spread-wrapper" id="magazineSpread">
+<!-- Real Spine Central Shadow Fold Effect -->
+<div class="spine-crease"></div>
+<!-- LEFT PAGE: HALAMAN 2 (REDAKSI) -->
+<article class="w-1/2 h-full bg-[#fdfdfd] shadow-page-inset-left p-6 sm:p-8 md:p-10 flex flex-col justify-between relative border-r border-neutral-200/60" data-purpose="left-page-editorial">
+<!-- Page Header & Title Section -->
+<div>
+<!-- Section Tag -->
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+<span class="text-brand-crimson text-xs tracking-[0.25em] font-bold font-sans uppercase">
+              REDAKSI
+            </span>
+<span class="text-[11px] text-neutral-400 font-sans tracking-wide">
+              PARLEMENTARIA EDISI 81
+            </span>
+</div>
+<!-- Main Article Headline -->
+<h2 class="text-2xl sm:text-3xl md:text-[34px] font-bold text-neutral-900 leading-[1.18] font-serif mb-5 tracking-tight">
+            Dari Kota Tangerang, Menguatkan Indonesia
+          </h2>
+<!-- Editorial Lead Paragraph with Drop Cap -->
+<p class="drop-cap text-neutral-700 font-serif text-[12.5px] sm:text-[13.5px] md:text-[14px] leading-relaxed text-justify mb-4">
+            Transformasi tata kelola pemerintahan daerah menghadapi tantangan baru seiring akselerasi pembangunan terintegrasi. Dewan Perwakilan Rakyat Daerah (DPRD) Kota Tangerang terus mengukuhkan komitmen pengawasan yang transparan, partisipatif, serta berpihak langsung kepada ketahanan ekonomi warga. Melalui sinergi legislasi yang akuntabel, setiap aspirasi masyarakat dikawal menjadi kebijakan nyata berkesinambungan.
+          </p>
+<p class="text-neutral-600 font-serif text-[11.5px] sm:text-[12.5px] md:text-[13px] leading-relaxed text-justify mb-4 hidden sm:block">
+            Semangat gotong royong dan keselarasan program kerja antara dewan legislatif dan eksekutif membuktikan bahwa keberhasilan pembangunan nasional berakar kokoh dari komitmen kemajuan di tingkat kota.
+          </p>
+<!-- Featured Editorial Image Frame -->
+<div class="mt-4 rounded bg-neutral-100 border border-neutral-200 p-2 shadow-sm">
+<div class="w-full h-32 md:h-44 bg-neutral-200 rounded relative overflow-hidden flex flex-col items-center justify-center text-neutral-400">
+<svg class="w-10 h-10 mb-1.5 opacity-60 text-neutral-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="text-[11px] font-medium tracking-wide uppercase text-neutral-600">Gedung DPRD Kota Tangerang</span>
+<span class="text-[10px] text-neutral-400 mt-0.5">Sidang Paripurna Pembahasan APBD &amp; Raperda Prioritas</span>
+</div>
+<div class="flex items-center justify-between mt-1.5 px-1">
+<p class="text-[10px] text-neutral-500 italic">Dokumentasi Bagian Humas &amp; Protokol Sekretariat DPRD</p>
+<span class="text-[9px] uppercase font-bold text-brand-crimson">Dok. Parlemen</span>
+</div>
+</div>
+</div>
+<!-- Editorial Footnote & Page Number -->
+<div class="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs text-neutral-500">
+<span class="font-semibold text-neutral-700 tracking-wider">2</span>
+<span class="italic text-[10px]">Catatan Redaktur Pelaksana</span>
+</div>
+</article>
+<!-- RIGHT PAGE: HALAMAN 3 (DAFTAR ISI) -->
+<article class="w-1/2 h-full bg-[#fdfdfd] shadow-page-inset-right p-6 sm:p-8 md:p-10 flex flex-col justify-between relative" data-purpose="right-page-toc">
+<div>
+<!-- Section Tag -->
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+<span class="text-brand-crimson text-xs tracking-[0.25em] font-bold font-sans uppercase">
+              DAFTAR ISI
+            </span>
+<span class="text-[11px] text-neutral-400 font-sans tracking-wide">
+              EDISI 81 • 2026
+            </span>
+</div>
+<!-- Hero Highlighted Cover Story Block -->
+<div class="mb-5 border border-neutral-200 rounded overflow-hidden shadow-sm bg-neutral-50">
+<!-- Simulated Hero Thumbnail Media -->
+<div class="w-full h-28 sm:h-36 md:h-44 bg-neutral-300 relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+<!-- Subtle decorative pattern -->
+<div class="absolute inset-0 flex items-center justify-center opacity-30">
+<svg class="w-24 h-24 text-neutral-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Overlay Badge -->
+<div class="absolute bottom-2 left-3 z-20 text-white">
+<span class="bg-brand-crimson text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
+                  LAPORAN UTAMA
+                </span>
+<p class="text-xs font-semibold drop-shadow mt-1">Rapat Paripurna Istimewa DPRD</p>
+</div>
+</div>
+<!-- Crimson Headline Banner (Matches Image reference) -->
+<div class="bg-brand-crimson text-white px-3.5 py-2 flex items-center justify-between">
+<span class="font-bold text-xs sm:text-sm tracking-wide">
+                Hal. 4 — Laporan Utama
+              </span>
+<span class="text-[11px] font-medium text-rose-200 hover:text-white cursor-pointer">
+                Baca Selengkapnya →
+              </span>
+</div>
+<div class="p-3 bg-white text-neutral-700 text-xs leading-relaxed">
+<strong>Kolaborasi Lintas Fraksi Kawal APBD 2026:</strong> Memastikan alokasi belanja modal pro-rakyat, penanganan banjir terpadu, dan fasilitas kesehatan gratis.
+            </div>
+</div>
+<!-- Table of Contents Articles Listing -->
+<div class="space-y-2.5">
+<!-- Item 1 -->
+<div class="flex items-baseline justify-between group cursor-pointer border-b border-neutral-100 pb-1.5">
+<div class="pr-2">
+<h4 class="text-xs sm:text-[13px] font-bold text-neutral-800 group-hover:text-brand-crimson transition">
+                  Fokus Legislasi
+                </h4>
+<p class="text-[11px] text-neutral-500 line-clamp-1">Pengesahan Raperda Perlindungan UMKM dan Insentif Usaha Kreatif</p>
+</div>
+<span class="text-xs font-bold text-neutral-900 group-hover:text-brand-crimson transition shrink-0">Hal. 6</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-baseline justify-between group cursor-pointer border-b border-neutral-100 pb-1.5">
+<div class="pr-2">
+<h4 class="text-xs sm:text-[13px] font-bold text-neutral-800 group-hover:text-brand-crimson transition">
+                  Suara Warga
+                </h4>
+<p class="text-[11px] text-neutral-500 line-clamp-1">Rangkuman Reses: Drainase Pemukiman &amp; Penataan Penerangan Jalan</p>
+</div>
+<span class="text-xs font-bold text-neutral-900 group-hover:text-brand-crimson transition shrink-0">Hal. 10</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-baseline justify-between group cursor-pointer border-b border-neutral-100 pb-1.5">
+<div class="pr-2">
+<h4 class="text-xs sm:text-[13px] font-bold text-neutral-800 group-hover:text-brand-crimson transition">
+                  Galeri Parlemen
+                </h4>
+<p class="text-[11px] text-neutral-500 line-clamp-1">Kilas Visual Kunjungan Kerja Komisi &amp; Dialog Publik</p>
+</div>
+<span class="text-xs font-bold text-neutral-900 group-hover:text-brand-crimson transition shrink-0">Hal. 12</span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-baseline justify-between group cursor-pointer">
+<div pr-2="">
+<h4 class="text-xs sm:text-[13px] font-bold text-neutral-800 group-hover:text-brand-crimson transition">
+                  Profil Komisi IV
+                </h4>
+<p class="text-[11px] text-neutral-500 line-clamp-1">Inovasi Pengawasan Infrastruktur Berkelanjutan</p>
+</div>
+<span class="text-xs font-bold text-neutral-900 group-hover:text-brand-crimson transition shrink-0">Hal. 14</span>
+</div>
+</div>
+</div>
+<!-- Footnote & Page Number -->
+<div class="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs text-neutral-500">
+<span class="italic text-[10px]">Daftar Rubrik Edisi Ini</span>
+<span class="font-semibold text-neutral-700 tracking-wider">3</span>
+</div>
+</article>
+</div>
+</main>
+<!-- END: FlipbookStage -->
+<!-- BEGIN: BottomControls -->
+<footer class="bg-[#1f1f23] border-t border-white/10 px-4 py-2.5 flex flex-col shrink-0 z-30">
+<div class="max-w-4xl w-full mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
+<!-- Quick Auxiliary Controls (Left) -->
+<div class="flex items-center space-x-2 order-2 sm:order-1">
+<button class="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 border border-white/5 transition" data-purpose="toggle-thumbnails" id="btnToggleThumbnails" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span id="thumbnailText">Thumbnails</span>
+</button>
+<button class="text-gray-400 hover:text-white p-1 rounded bg-white/5 hover:bg-white/10 transition" data-purpose="toggle-sound" id="btnSoundToggle" title="Efek Suara Membalik Halaman" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Scrubber Track & Page Indicator (Center) -->
+<div class="flex-1 w-full max-w-md flex items-center space-x-3 order-1 sm:order-2">
+<span class="text-xs font-medium text-gray-300 shrink-0 font-mono tracking-tight">
+          Halaman 2-3 dari 15
+        </span>
+<!-- Scrubber Progress Bar -->
+<div class="relative w-full h-1.5 bg-neutral-700 rounded-full overflow-hidden cursor-pointer group">
+<!-- Filled red progress corresponding to pages 2-3 of 15 -->
+<div class="absolute left-0 top-0 bottom-0 bg-brand-crimson w-[20%] group-hover:bg-brand-crimsonLight transition-all"></div>
+</div>
+</div>
+<!-- Fullscreen / Layout Mode (Right) -->
+<div class="flex items-center space-x-2 order-3">
+<button class="text-gray-400 hover:text-white p-1.5 rounded bg-white/5 hover:bg-white/10 transition" data-purpose="fullscreen-toggle" id="btnFullscreen" title="Layar Penuh" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Collapsible Mini Thumbnail Carousel Bar -->
+<div class="mt-2.5 pt-2 border-t border-white/5 flex items-center justify-center space-x-3 overflow-x-auto thumbnail-scroll pb-1" data-purpose="thumbnail-carousel-container" id="thumbnailStrip">
+<!-- Thumb: Cover (Page 1) -->
+<div class="flex flex-col items-center opacity-60 hover:opacity-100 cursor-pointer transition shrink-0">
+<div class="w-10 h-14 bg-neutral-800 rounded border border-white/20 p-1 flex items-center justify-center text-[9px] text-gray-400 font-bold">
+          1
+        </div>
+<span class="text-[10px] text-gray-400 mt-1">Cover</span>
+</div>
+<!-- Thumb: Active Spread (Pages 2-3) -->
+<div class="flex flex-col items-center cursor-pointer shrink-0">
+<div class="w-18 h-14 bg-neutral-100 rounded border-2 border-brand-crimson shadow-md flex items-center justify-center overflow-hidden">
+<div class="w-1/2 h-full bg-neutral-200 border-r border-neutral-300 flex items-center justify-center text-[8px] text-neutral-800 font-bold">2</div>
+<div class="w-1/2 h-full bg-neutral-100 flex items-center justify-center text-[8px] text-neutral-800 font-bold">3</div>
+</div>
+<span class="text-[10px] text-rose-400 font-semibold mt-1">2-3</span>
+</div>
+<!-- Thumb: Pages 4-5 -->
+<div class="flex flex-col items-center opacity-60 hover:opacity-100 cursor-pointer transition shrink-0">
+<div class="w-18 h-14 bg-neutral-800 rounded border border-white/20 flex items-center justify-center overflow-hidden">
+<div class="w-1/2 h-full bg-neutral-900 border-r border-neutral-700 flex items-center justify-center text-[8px] text-gray-400 font-bold">4</div>
+<div class="w-1/2 h-full bg-neutral-800 flex items-center justify-center text-[8px] text-gray-400 font-bold">5</div>
+</div>
+<span class="text-[10px] text-gray-400 mt-1">4-5</span>
+</div>
+<!-- Thumb: Pages 6-7 -->
+<div class="flex flex-col items-center opacity-60 hover:opacity-100 cursor-pointer transition shrink-0">
+<div class="w-18 h-14 bg-neutral-800 rounded border border-white/20 flex items-center justify-center overflow-hidden">
+<div class="w-1/2 h-full bg-neutral-900 border-r border-neutral-700 flex items-center justify-center text-[8px] text-gray-400 font-bold">6</div>
+<div class="w-1/2 h-full bg-neutral-800 flex items-center justify-center text-[8px] text-gray-400 font-bold">7</div>
+</div>
+<span class="text-[10px] text-gray-400 mt-1">6-7</span>
+</div>
+<!-- Thumb: Pages 8-9 -->
+<div class="flex flex-col items-center opacity-60 hover:opacity-100 cursor-pointer transition shrink-0">
+<div class="w-18 h-14 bg-neutral-800 rounded border border-white/20 flex items-center justify-center overflow-hidden">
+<div class="w-1/2 h-full bg-neutral-900 border-r border-neutral-700 flex items-center justify-center text-[8px] text-gray-400 font-bold">8</div>
+<div class="w-1/2 h-full bg-neutral-800 flex items-center justify-center text-[8px] text-gray-400 font-bold">9</div>
+</div>
+<span class="text-[10px] text-gray-400 mt-1">8-9</span>
+</div>
+</div>
+</footer>
+<!-- END: BottomControls -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="flipbook-navigation-handlers">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle Thumbnails Strip
+      const btnToggleThumbnails = document.getElementById('btnToggleThumbnails');
+      const thumbnailStrip = document.getElementById('thumbnailStrip');
+      
+      btnToggleThumbnails.addEventListener('click', () => {
+        thumbnailStrip.classList.toggle('hidden');
+      });
+
+      // Fullscreen functionality
+      const btnFullscreen = document.getElementById('btnFullscreen');
+      btnFullscreen.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
+
+      // Keyboard Page Navigation Shortcuts
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          // Trigger next spread visual cue
+          const nextBtn = document.getElementById('nextPageBtn');
+          nextBtn.classList.add('scale-125', 'bg-brand-crimson');
+          setTimeout(() => nextBtn.classList.remove('scale-125', 'bg-brand-crimson'), 180);
+        } else if (e.key === 'ArrowLeft') {
+          // Trigger prev spread visual cue
+          const prevBtn = document.getElementById('prevPageBtn');
+          prevBtn.classList.add('scale-125', 'bg-brand-crimson');
+          setTimeout(() => prevBtn.classList.remove('scale-125', 'bg-brand-crimson'), 180);
+        }
+      });
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>

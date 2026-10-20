@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel Admin - E-Paper Parlementaria DPRD Kota Tangerang</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              crimson: '#B3131B',
+              crimsonHover: '#981017',
+              crimsonLight: '#FDF2F2',
+              cream: '#FAF7F2',
+              warmBg: '#F4F2EE',
+              cardBorder: '#E8E5DF',
+              textMain: '#1F2937',
+              textMuted: '#6B7280'
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Scrollbars and Accent Details -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #FAF7F2;
+      color: #1F2937;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    /* Subtle dash border styling */
+    .dropzone-border {
+      border: 2px dashed #B3131B;
+    }
+
+    /* Polished focus ring */
+    .form-input-focus:focus {
+      border-color: #B3131B;
+      box-shadow: 0 0 0 1px #B3131B;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#FAF7F2] text-[#1F2937] antialiased flex flex-col justify-between">
+<!-- BEGIN: MainHeader -->
+<header class="w-full bg-[#FAF7F2] border-b border-[#E8E5DF] sticky top-0 z-30 shadow-xs" data-purpose="top-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<!-- Title, Breadcrumb, and Portal Backlink -->
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-3">
+<div class="flex items-baseline space-x-2">
+<h1 class="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-gray-900">
+            Panel Admin
+          </h1>
+<span class="text-sm font-medium text-gray-400">/admin</span>
+</div>
+<div class="flex items-center space-x-2 text-xs sm:text-sm text-gray-500">
+<span class="hidden sm:inline">•</span>
+<span class="font-medium text-gray-700">E-Paper Parlementaria DPRD Kota Tangerang</span>
+<a class="inline-flex items-center text-xs font-semibold text-[#B3131B] hover:underline ml-2 bg-[#FDF2F2] px-2 py-0.5 rounded transition" href="#">
+            ← Lihat Portal Utama
+          </a>
+</div>
+</div>
+<!-- Right Meta Info: Publication Count & Profile -->
+<div class="flex items-center justify-between sm:justify-end space-x-5 text-sm" data-purpose="admin-meta">
+<span class="inline-flex items-center text-xs sm:text-sm font-medium text-gray-600 bg-white border border-gray-200 px-3 py-1.5 rounded-full shadow-2xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+          3 edisi terbit • 1 draft
+        </span>
+<!-- User Badge -->
+<div class="flex items-center space-x-2.5 pl-2 border-l border-gray-300">
+<div class="w-8 h-8 rounded-full bg-[#B3131B] text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+            SR
+          </div>
+<div class="hidden sm:block text-left leading-tight">
+<p class="text-xs font-bold text-gray-900">Staf Redaksi</p>
+<p class="text-[11px] text-gray-500">Humas &amp; Protokol</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow space-y-8">
+<!-- BEGIN: DropzoneHero -->
+<section aria-label="Area Pengunggahan File PDF" class="w-full">
+<div class="dropzone-border bg-white rounded-xl p-8 sm:p-10 flex flex-col items-center justify-center text-center cursor-pointer transition hover:bg-[#FDF2F2]/30 group shadow-xs" data-purpose="upload-dropzone" id="pdf-dropzone">
+<!-- Icon PDF Doc -->
+<div class="w-16 h-16 mb-4 rounded-full bg-[#FDF2F2] flex items-center justify-center text-[#B3131B] group-hover:scale-105 transition-transform duration-200 shadow-inner">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M9 13h6m-6 4h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Headline & Description -->
+<h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1 tracking-tight">
+          Tarik file PDF majalah ke sini
+        </h2>
+<p class="text-sm text-gray-500 max-w-lg mb-6">
+          atau klik untuk memilih file dari komputer (maks. 100 MB, format PDF resolusi tinggi)
+        </p>
+<!-- Upload Action Button -->
+<button class="inline-flex items-center px-6 py-2.5 rounded-md font-semibold text-sm text-white bg-[#B3131B] hover:bg-[#981017] active:scale-95 transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B3131B]" type="button">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Pilih PDF
+        </button>
+<!-- Upload Notice / Status -->
+<div class="mt-4 inline-flex items-center gap-1.5 text-xs text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded">
+<svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>File siap diunggah: <strong class="text-gray-800">Parlementaria_Edisi_82_Draft.pdf</strong> (34.2 MB)</span>
+</div>
+</div>
+</section>
+<!-- END: DropzoneHero -->
+<!-- BEGIN: MiddleTwoColumnGrid -->
+<section aria-label="Manajemen Detail Edisi dan Status Pemrosesan" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+<!-- Card Kiri: Info Edisi -->
+<article class="bg-white rounded-xl border border-gray-200 p-6 sm:p-7 shadow-2xs space-y-5" data-purpose="edition-form-card">
+<div>
+<h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+<svg class="w-5 h-5 text-[#B3131B]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Info Edisi
+          </h3>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Judul Edisi -->
+<div>
+<label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5" for="edition-title">
+              Judul
+            </label>
+<input class="w-full text-sm rounded-lg border-gray-300 shadow-2xs focus:border-[#B3131B] focus:ring-[#B3131B] py-2 px-3 text-gray-800 placeholder-gray-400" id="edition-title" name="title" placeholder="Contoh: Parlementaria Edisi 82" type="text" value="Parlementaria Edisi 82"/>
+</div>
+<!-- Grid: Tanggal & Kategori -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5" for="edition-date">
+                Tanggal terbit
+              </label>
+<input class="w-full text-sm rounded-lg border-gray-300 shadow-2xs focus:border-[#B3131B] focus:ring-[#B3131B] py-2 px-3 text-gray-800" id="edition-date" name="release-date" placeholder="DD/MM/YYYY" type="text" value="01/10/2026"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5" for="edition-category">
+                Kategori
+              </label>
+<select class="w-full text-sm rounded-lg border-gray-300 shadow-2xs focus:border-[#B3131B] focus:ring-[#B3131B] py-2 px-3 text-gray-800" id="edition-category" name="category">
+<option selected="" value="utama">Majalah Utama</option>
+<option value="khusus">Buletin Khusus</option>
+<option value="kinerja">Laporan Kinerja Tahunan</option>
+</select>
+</div>
+</div>
+<!-- Deskripsi -->
+<div>
+<label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5" for="edition-desc">
+              Deskripsi
+            </label>
+<textarea class="w-full text-sm rounded-lg border-gray-300 shadow-2xs focus:border-[#B3131B] focus:ring-[#B3131B] py-2 px-3 text-gray-800 placeholder-gray-400 resize-none" id="edition-desc" name="description" placeholder="Ringkasan singkat edisi..." rows="3">Ringkasan singkat edisi: Mengulas percepatan transformasi digital parlemen dan transparansi penyusunan APBD Kota Tangerang.</textarea>
+</div>
+<!-- Action Buttons -->
+<div class="pt-3 flex flex-wrap items-center gap-3">
+<button class="px-5 py-2.5 rounded-lg bg-[#B3131B] hover:bg-[#981017] text-white font-medium text-sm transition shadow-2xs focus:ring-2 focus:ring-[#B3131B] focus:outline-none" type="submit">
+              Terbitkan
+            </button>
+<button class="px-5 py-2.5 rounded-lg bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium text-sm transition shadow-2xs focus:ring-2 focus:ring-gray-300 focus:outline-none" type="button">
+              Simpan Draft
+            </button>
+</div>
+</form>
+</article>
+<!-- Card Kanan: Pemrosesan Otomatis -->
+<article class="bg-white rounded-xl border border-gray-200 p-6 sm:p-7 shadow-2xs space-y-6" data-purpose="processing-status-card">
+<div>
+<h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center justify-between">
+<span class="flex items-center gap-2">
+<svg class="w-5 h-5 text-[#B3131B]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              Pemrosesan otomatis
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+              Sedang Berjalan
+            </span>
+</h3>
+</div>
+<!-- Progress Status Info -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-semibold text-gray-800">Memproses halaman 12 dari 40</span>
+<span class="text-xs font-bold text-[#B3131B]">30%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+<div class="bg-[#B3131B] h-2.5 rounded-full transition-all duration-300" style="width: 30%"></div>
+</div>
+</div>
+<!-- Step-by-Step Processing Logs -->
+<div class="space-y-3.5 pt-1 text-sm">
+<!-- Step 1: Done -->
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="flex-grow flex justify-between">
+<span class="text-gray-700">Gambar halaman:</span>
+<span class="font-medium text-emerald-700">selesai (40/40)</span>
+</div>
+</div>
+<!-- Step 2: Done -->
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="flex-grow flex justify-between">
+<span class="text-gray-700">Thumbnail dan cover:</span>
+<span class="font-medium text-emerald-700">selesai</span>
+</div>
+</div>
+<!-- Step 3: In Progress -->
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 mt-0.5 animate-spin">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-grow flex justify-between">
+<span class="text-gray-800 font-medium">Ekstraksi teks (OCR) &amp; indeks:</span>
+<span class="font-semibold text-amber-700">berjalan (Halaman 12...)</span>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex items-start gap-3 text-gray-400">
+<div class="w-5 h-5 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center shrink-0 mt-0.5">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20">
+<circle cx="10" cy="10" r="4"></circle>
+</svg>
+</div>
+<div class="flex-grow flex justify-between">
+<span>Optimasi Flipbook web &amp; kompresi:</span>
+<span class="font-normal text-gray-400">menunggu antrean</span>
+</div>
+</div>
+</div>
+<!-- Mini Preview Page Box -->
+<div class="bg-gray-50 border border-dashed border-gray-200 rounded-lg p-3 flex items-center gap-3.5">
+<div class="w-10 h-14 bg-white border border-gray-300 shadow-2xs rounded flex flex-col items-center justify-center text-[9px] text-gray-400 font-mono">
+<span>Hal</span>
+<span class="font-bold text-gray-700">12</span>
+</div>
+<div class="text-xs text-gray-600 leading-snug">
+<p class="font-medium text-gray-800">Menyusun indeks kata kunci...</p>
+<p class="text-gray-400 text-[11px]">Sidang Paripurna Pembahasan Raperda Inisiatif</p>
+</div>
+</div>
+</article>
+</section>
+<!-- END: MiddleTwoColumnGrid -->
+<!-- BEGIN: EditionsListSection -->
+<section class="bg-white rounded-xl border border-gray-200 shadow-2xs overflow-hidden" data-purpose="edition-list-card">
+<!-- Table Header & Filter Bar -->
+<div class="p-5 sm:px-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<div>
+<h3 class="text-lg font-bold text-gray-900 tracking-tight">Daftar Edisi</h3>
+<p class="text-xs text-gray-500">Kelola dan publikasikan berkas majalah digital parlemen</p>
+</div>
+<div class="flex items-center space-x-2">
+<div class="relative">
+<input class="text-xs rounded-lg border-gray-300 pl-8 pr-3 py-1.5 focus:border-[#B3131B] focus:ring-[#B3131B] w-48 sm:w-60 shadow-2xs" placeholder="Cari edisi..." type="text"/>
+<svg class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<button class="px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100" type="button">
+            Filter
+          </button>
+</div>
+</div>
+<!-- Responsive List / Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-sm">
+<thead>
+<tr class="bg-gray-50/60 border-b border-gray-200 text-xs font-semibold text-gray-600 tracking-wider">
+<th class="py-3 px-6" scope="col">Nama &amp; Periode Edisi</th>
+<th class="py-3 px-4 text-center" scope="col">Status</th>
+<th class="py-3 px-4" scope="col">Halaman</th>
+<th class="py-3 px-4" scope="col">Terakhir Diperbarui</th>
+<th class="py-3 px-6 text-right" scope="col">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 text-gray-700">
+<!-- Row 1: Edisi 81 -->
+<tr class="hover:bg-gray-50/80 transition-colors">
+<td class="py-4 px-6 font-medium text-gray-900 flex items-center space-x-3">
+<div class="w-8 h-10 bg-gray-100 border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-gray-500">
+                  E81
+                </div>
+<div>
+<span class="block font-semibold text-gray-900">Edisi 81 • Agustus 2026</span>
+<span class="text-xs text-gray-400">Liputan Khusus: HUT Kemerdekaan &amp; Evaluasi Raperda</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  Terbit
+                </span>
+</td>
+<td class="py-4 px-4 text-xs text-gray-600">48 Hal</td>
+<td class="py-4 px-4 text-xs text-gray-500">28 Agu 2026</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center space-x-2 text-xs font-medium">
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Edit</a>
+<span class="text-gray-300">•</span>
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Ganti cover</a>
+<span class="text-gray-300">•</span>
+<a class="text-amber-700 hover:underline transition" href="#">Arsipkan</a>
+</div>
+</td>
+</tr>
+<!-- Row 2: Edisi 80 -->
+<tr class="hover:bg-gray-50/80 transition-colors">
+<td class="py-4 px-6 font-medium text-gray-900 flex items-center space-x-3">
+<div class="w-8 h-10 bg-gray-100 border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-gray-500">
+                  E80
+                </div>
+<div>
+<span class="block font-semibold text-gray-900">Edisi 80 • Juli 2026</span>
+<span class="text-xs text-gray-400">Sorotan: Sinergi Penanganan Banjir dan Drainase Terpadu</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  Terbit
+                </span>
+</td>
+<td class="py-4 px-4 text-xs text-gray-600">52 Hal</td>
+<td class="py-4 px-4 text-xs text-gray-500">15 Jul 2026</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center space-x-2 text-xs font-medium">
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Edit</a>
+<span class="text-gray-300">•</span>
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Ganti cover</a>
+<span class="text-gray-300">•</span>
+<a class="text-amber-700 hover:underline transition" href="#">Arsipkan</a>
+</div>
+</td>
+</tr>
+<!-- Row 3: Edisi 82 (Draft / In Process) -->
+<tr class="hover:bg-gray-50/80 transition-colors bg-amber-50/30">
+<td class="py-4 px-6 font-medium text-gray-900 flex items-center space-x-3">
+<div class="w-8 h-10 bg-amber-100 border border-amber-200 rounded flex items-center justify-center text-[10px] font-bold text-amber-700">
+                  E82
+                </div>
+<div>
+<span class="block font-semibold text-gray-900">Edisi 82 • Oktober 2026</span>
+<span class="text-xs text-amber-600 font-medium">Sedang memproses dokumen PDF...</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-300">
+                  Draft
+                </span>
+</td>
+<td class="py-4 px-4 text-xs text-gray-600">40 Hal</td>
+<td class="py-4 px-4 text-xs text-gray-500">Baru saja</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center space-x-2 text-xs font-medium">
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Edit</a>
+<span class="text-gray-300">•</span>
+<a class="text-[#B3131B] font-semibold hover:underline transition" href="#">Pratinjau</a>
+<span class="text-gray-300">•</span>
+<a class="text-red-600 hover:underline transition" href="#">Hapus</a>
+</div>
+</td>
+</tr>
+<!-- Row 4: Edisi 79 -->
+<tr class="hover:bg-gray-50/80 transition-colors">
+<td class="py-4 px-6 font-medium text-gray-900 flex items-center space-x-3">
+<div class="w-8 h-10 bg-gray-100 border border-gray-200 rounded flex items-center justify-center text-[10px] font-bold text-gray-500">
+                  E79
+                </div>
+<div>
+<span class="block font-semibold text-gray-900">Edisi 79 • Juni 2026</span>
+<span class="text-xs text-gray-400">Rapat Paripurna LKPJ Walikota Akhir Tahun Anggaran</span>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  Terbit
+                </span>
+</td>
+<td class="py-4 px-4 text-xs text-gray-600">44 Hal</td>
+<td class="py-4 px-4 text-xs text-gray-500">10 Jun 2026</td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center space-x-2 text-xs font-medium">
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Edit</a>
+<span class="text-gray-300">•</span>
+<a class="text-gray-700 hover:text-[#B3131B] transition" href="#">Ganti cover</a>
+<span class="text-gray-300">•</span>
+<a class="text-amber-700 hover:underline transition" href="#">Arsipkan</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="p-4 bg-gray-50/50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+<p>Menampilkan 4 dari 4 total edisi tersimpan</p>
+<div class="flex items-center space-x-1">
+<button class="px-2.5 py-1 rounded border border-gray-200 bg-white text-gray-400 cursor-not-allowed" disabled="">Sebelumnya</button>
+<span class="px-2.5 py-1 text-gray-800 font-semibold">1</span>
+<button class="px-2.5 py-1 rounded border border-gray-200 bg-white text-gray-400 cursor-not-allowed" disabled="">Selanjutnya</button>
+</div>
+</div>
+</section>
+<!-- END: EditionsListSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="w-full border-t border-gray-200 bg-[#FAF7F2] py-4 text-center text-xs text-gray-500 mt-6" data-purpose="page-footer">
+<div class="max-w-7xl mx-auto px-4">
+<p>© 2026 Sekretariat DPRD Kota Tangerang. Sistem Manajemen E-Paper Parlementaria.</p>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- JavaScript Interactions -->
+<script data-purpose="drag-drop-interactive">
+    // Interactive drag-and-drop visual indicator
+    const dropzone = document.getElementById('pdf-dropzone');
+    
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.add('bg-[#FDF2F2]', 'border-solid');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.remove('bg-[#FDF2F2]', 'border-solid');
+        }, false);
+      });
+    }
+  </script>
+</body></html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>E-Paper DPRD Kota Tangerang — Majalah Parlementaria</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cormorant Garamond, Merriweather, Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&amp;family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              crimson: '#B3131B',
+              crimsonDark: '#8F0E14',
+              crimsonLight: '#DC2626',
+              accent: '#E53935'
+            },
+            surface: {
+              cream: '#FAF7F2',
+              creamDark: '#F3EEE5',
+              dark: '#141416',
+              darkCard: '#1C1C1F',
+              slate: '#27272A'
+            }
+          },
+          fontFamily: {
+            serif: ['"Merriweather"', 'Georgia', 'serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'book': '0 16px 36px -10px rgba(0, 0, 0, 0.4), 0 8px 16px -8px rgba(0, 0, 0, 0.3)',
+            'book-hover': '0 24px 44px -12px rgba(179, 19, 27, 0.35), 0 12px 24px -10px rgba(0, 0, 0, 0.45)',
+            'glow': '0 0 45px -8px rgba(179, 19, 27, 0.45)'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom CSS for Realistic Book Mockups & Visual Flourishes -->
+<style data-purpose="layout-effects">
+    /* 3D Tilted Cover Effect for the Hero Magazine */
+    .hero-book-perspective {
+      perspective: 1200px;
+    }
+    .hero-book-cover {
+      transform: rotateY(-11deg) rotateX(4deg) rotateZ(-2deg);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      box-shadow: -14px 18px 40px rgba(0, 0, 0, 0.65), -2px 0 10px rgba(0, 0, 0, 0.45);
+    }
+    .hero-book-cover:hover {
+      transform: rotateY(-4deg) rotateX(2deg) rotateZ(0deg) scale(1.02);
+      box-shadow: -18px 24px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(179, 19, 27, 0.3);
+    }
+
+    /* Spine shading overlay */
+    .spine-crease {
+      background: linear-gradient(90deg, 
+        rgba(255,255,255,0.18) 0%, 
+        rgba(0,0,0,0.35) 4%, 
+        rgba(0,0,0,0.1) 8%, 
+        rgba(255,255,255,0.06) 12%, 
+        rgba(0,0,0,0) 18%);
+    }
+
+    /* Miniature book card spine */
+    .shelf-card-spine {
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.15) 0%,
+        rgba(0,0,0,0.4) 5%,
+        rgba(0,0,0,0.05) 10%,
+        rgba(255,255,255,0.04) 14%,
+        rgba(0,0,0,0) 20%);
+    }
+  </style>
+</head>
+<body class="bg-[#FAF7F2] text-neutral-800 font-sans antialiased selection:bg-brand-crimson selection:text-white flex flex-col min-h-screen">
+<!-- BEGIN: SiteHeader -->
+<header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-neutral-200/80 transition-all duration-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Brand & Emblem -->
+<a class="flex items-center gap-3.5 group shrink-0" href="#" title="Beranda E-Paper DPRD Kota Tangerang">
+<!-- Kota Tangerang Emblem Seal Placeholder Graphic -->
+<div class="w-11 h-11 rounded-lg bg-brand-crimson flex items-center justify-center text-white shadow-md shadow-brand-crimson/25 group-hover:scale-105 transition-transform">
+<svg class="w-6 h-6 text-amber-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+<path d="M2 17l10 5 10-5"></path>
+<path d="M2 12l10 5 10-5"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-bold tracking-tight text-lg text-neutral-900 leading-tight">E-Paper DPRD</span>
+<span class="text-[11px] font-semibold tracking-wider text-neutral-500 uppercase">Kota Tangerang • Parlementaria</span>
+</div>
+</a>
+<!-- Primary Navigation Links -->
+<nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-neutral-600">
+<a class="px-3.5 py-2 rounded-full text-brand-crimson bg-brand-crimson/10 font-bold hover:bg-brand-crimson/15 transition-colors" href="#hero">
+          Beranda
+        </a>
+<a class="px-3.5 py-2 rounded-full hover:text-neutral-950 hover:bg-neutral-200/50 transition-colors" href="#rak-edisi">
+          Majalah
+        </a>
+<a class="px-3.5 py-2 rounded-full hover:text-neutral-950 hover:bg-neutral-200/50 transition-colors" href="#fitur">
+          Arsip
+        </a>
+<a class="px-3.5 py-2 rounded-full hover:text-neutral-950 hover:bg-neutral-200/50 transition-colors" href="#footer">
+          Tentang Kami
+        </a>
+</nav>
+<!-- Search & Utility Controls -->
+<div class="flex items-center gap-3">
+<!-- Interactive Search Input -->
+<div class="relative hidden sm:block w-52 md:w-64 lg:w-72">
+<input class="w-full pl-9 pr-4 py-2 text-xs md:text-sm bg-white/90 border border-neutral-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-crimson focus:border-brand-crimson placeholder-neutral-400 transition" placeholder="Cari edisi, topik..." type="text">
+<svg class="w-4 h-4 text-neutral-400 absolute left-3 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Flipbook Mode Quick Badge -->
+<button class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-700 bg-white border border-neutral-300 rounded-full hover:bg-neutral-50 shadow-sm transition" type="button">
+<svg class="w-4 h-4 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden sm:inline">Mode Flipbook</span>
+</button>
+</div>
+</div>
+</header>
+<!-- END: SiteHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-grow">
+<!-- BEGIN: HeroFeaturedEdition -->
+<!-- Dark showcase inspired directly by reference: tilted 3D red magazine on dark background with serif heading -->
+<section class="relative bg-surface-dark text-white overflow-hidden py-14 lg:py-20 border-b border-neutral-800" id="hero">
+<!-- Subtle atmospheric lighting backdrop -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-crimson/15 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 right-1/3 w-80 h-80 bg-red-950/20 rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Left Column: Realistic 3D Magazine Cover -->
+<div class="lg:col-span-5 flex justify-center hero-book-perspective order-2 lg:order-1">
+<div class="hero-book-cover relative w-64 sm:w-72 md:w-80 h-[410px] sm:h-[460px] md:h-[490px] bg-gradient-to-br from-[#B3131B] via-[#961016] to-[#6E0A0F] rounded-r-md rounded-l-sm overflow-hidden flex flex-col justify-between p-6 sm:p-7 select-none cursor-pointer border-t border-r border-red-400/20" data-purpose="magazine-mockup-hero">
+<!-- Spine Light Overlay -->
+<div class="absolute inset-y-0 left-0 w-8 spine-crease pointer-events-none z-20"></div>
+<!-- Cover Top Header -->
+<div class="relative z-10 pt-1">
+<div class="flex items-center justify-between border-b border-red-300/30 pb-3">
+<span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-white/90">DPRD KOTA TANGERANG</span>
+<span class="text-[9px] font-semibold bg-white/20 px-2 py-0.5 rounded text-white tracking-wider">EDISI 81</span>
+</div>
+<div class="mt-4">
+<p class="text-xs sm:text-sm tracking-wider font-extrabold uppercase text-amber-200">
+                    DIRGAHAYU RI KE-81
+                  </p>
+<p class="text-[11px] text-white/70 tracking-wide mt-0.5">Agustus 2026</p>
+</div>
+</div>
+<!-- Cover Centerpiece Decorative Emblem -->
+<div class="relative z-10 my-auto text-center opacity-85">
+<div class="mx-auto w-20 h-20 rounded-full border border-white/20 flex items-center justify-center bg-black/15 shadow-inner">
+<svg class="w-10 h-10 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<p class="text-[10px] tracking-widest uppercase font-semibold text-white/80 mt-2">Suara Rakyat &amp; Kebijakan</p>
+</div>
+<!-- Cover Bottom Title: "Parlementaria" -->
+<div class="relative z-10 border-t border-red-300/30 pt-3">
+<h3 class="font-serif italic font-bold text-3xl sm:text-4xl text-white tracking-normal drop-shadow-md">
+                  Parlementaria
+                </h3>
+<p class="text-[11px] text-white/80 font-medium tracking-wide mt-1">Majalah Resmi Sekretariat DPRD Kota Tangerang</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Headline, Narrative & Primary Actions -->
+<div class="lg:col-span-7 flex flex-col justify-center order-1 lg:order-2 space-y-6 text-center lg:text-left">
+<!-- Category Tag -->
+<div class="inline-flex items-center justify-center lg:justify-start gap-2">
+<span class="px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded">
+                EDISI TERBARU
+              </span>
+<span class="text-xs text-neutral-400 font-medium">No. 81 / Vol. VIII / 2026</span>
+</div>
+<!-- Main Elegant Serif Headline -->
+<h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.18]">
+              Indonesia Berdaulat, Adil, dan Makmur
+            </h1>
+<!-- Descriptive Body Copy -->
+<p class="text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Laporan utama dari Kota Tangerang untuk Indonesia yang berdaulat, adil, dan makmur. Mengulas tuntas capaian fungsi legislasi daerah, sinergi pengawasan tata kelola perkotaan, dan aktualisasi aspirasi masyarakat demi kemakmuran bersama.
+            </p>
+<!-- Call to Actions -->
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-brand-crimson hover:bg-brand-crimsonLight text-white font-semibold text-sm shadow-lg shadow-brand-crimson/30 hover:shadow-glow transition-all transform active:scale-95" href="#flipbook-viewer">
+<!-- Book icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Baca Sekarang</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium text-sm border border-neutral-700 hover:border-neutral-500 backdrop-blur-sm transition-all" href="#download">
+<!-- Download icon -->
+<svg class="w-4 h-4 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Unduh PDF</span>
+</a>
+</div>
+<!-- Publication Metadata Pills -->
+<div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs text-neutral-400 font-medium">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Edisi 81 (Agustus 2026)
+              </span>
+<span class="">•</span>
+<span class="">64 Halaman</span>
+<span class="">•</span>
+<span class="">Format Digital Flipbook &amp; PDF</span>
+<span class="">•</span>
+<span class="">18.4 MB</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroFeaturedEdition -->
+<!-- BEGIN: MagazineShelfSection -->
+<!-- Matches "Rak Edisi" from reference with filter pills and crimson book array -->
+<section class="py-14 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="rak-edisi">
+<!-- Shelf Section Header & Filters -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-neutral-200">
+<div>
+<h2 class="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight">
+            Rak Edisi
+          </h2>
+<p class="text-sm text-neutral-500 mt-1.5 font-normal">
+            Jelajahi seluruh penerbitan majalah Parlementaria dan buletin resmi DPRD Kota Tangerang.
+          </p>
+</div>
+<!-- Filter Pill Controls -->
+<div class="flex flex-wrap items-center gap-2" data-purpose="shelf-filters">
+<button class="px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-brand-crimson text-white shadow-sm hover:bg-brand-crimsonDark transition" type="button">
+            Semua
+          </button>
+<button class="px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100 transition" type="button">
+            Majalah
+          </button>
+<button class="px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100 transition" type="button">
+            Buletin
+          </button>
+<button class="px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100 transition" type="button">
+            2026
+          </button>
+<button class="px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100 transition" type="button">
+            2025
+          </button>
+</div>
+</div>
+<!-- Shelf Grid: 5 Consecutive Editions matching image -->
+<div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-7 lg:gap-8">
+<!-- Card 1: Edisi 81 -->
+<article class="group flex flex-col" data-purpose="magazine-card">
+<div class="relative w-full aspect-[1/1.42] bg-gradient-to-br from-[#B3131B] via-[#9E1117] to-[#7B0D12] rounded-md shadow-book group-hover:shadow-book-hover group-hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer overflow-hidden border-t border-red-300/30">
+<!-- Spine Crease -->
+<div class="absolute inset-y-0 left-0 w-4 shelf-card-spine pointer-events-none"></div>
+<!-- Top Header -->
+<div class="relative z-10 text-[9px] tracking-wider uppercase font-bold text-white/90 border-b border-red-200/20 pb-1.5">
+              DPRD KOTA TANGERANG
+            </div>
+<!-- Minimal Graphic Element -->
+<div class="relative z-10 my-auto text-center">
+<span class="inline-block text-[11px] font-bold text-amber-200 uppercase tracking-widest">Edisi 81</span>
+<p class="text-[9px] text-white/70 mt-0.5">Agustus 2026</p>
+</div>
+<!-- Cover Title -->
+<div class="relative z-10 border-t border-red-200/20 pt-2">
+<h4 class="font-serif italic font-bold text-lg sm:text-xl text-white tracking-normal leading-tight">
+                Parlementaria
+              </h4>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 p-3 z-30">
+<button class="w-full py-1.5 px-3 bg-brand-crimson text-white text-xs font-semibold rounded hover:bg-red-700 transition">
+                Baca Flipbook
+              </button>
+<button class="w-full py-1.5 px-3 bg-white/20 text-white text-xs font-medium rounded hover:bg-white/30 backdrop-blur-sm transition">
+                Unduh PDF
+              </button>
+</div>
+</div>
+<!-- Metadata Under Card -->
+<div class="mt-3.5 text-left">
+<h5 class="text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-brand-crimson transition-colors">
+              Edisi 81
+            </h5>
+<p class="text-xs text-neutral-500 font-medium">Agustus 2026</p>
+</div>
+</article>
+<!-- Card 2: Edisi 80 -->
+<article class="group flex flex-col" data-purpose="magazine-card">
+<div class="relative w-full aspect-[1/1.42] bg-gradient-to-br from-[#B3131B] via-[#9E1117] to-[#7B0D12] rounded-md shadow-book group-hover:shadow-book-hover group-hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer overflow-hidden border-t border-red-300/30">
+<!-- Spine Crease -->
+<div class="absolute inset-y-0 left-0 w-4 shelf-card-spine pointer-events-none"></div>
+<!-- Top Header -->
+<div class="relative z-10 text-[9px] tracking-wider uppercase font-bold text-white/90 border-b border-red-200/20 pb-1.5">
+              DPRD KOTA TANGERANG
+            </div>
+<!-- Minimal Graphic Element -->
+<div class="relative z-10 my-auto text-center">
+<span class="inline-block text-[11px] font-bold text-amber-200 uppercase tracking-widest">Edisi 80</span>
+<p class="text-[9px] text-white/70 mt-0.5">Juli 2026</p>
+</div>
+<!-- Cover Title -->
+<div class="relative z-10 border-t border-red-200/20 pt-2">
+<h4 class="font-serif italic font-bold text-lg sm:text-xl text-white tracking-normal leading-tight">
+                Parlementaria
+              </h4>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 p-3 z-30">
+<button class="w-full py-1.5 px-3 bg-brand-crimson text-white text-xs font-semibold rounded hover:bg-red-700 transition">
+                Baca Flipbook
+              </button>
+<button class="w-full py-1.5 px-3 bg-white/20 text-white text-xs font-medium rounded hover:bg-white/30 backdrop-blur-sm transition">
+                Unduh PDF
+              </button>
+</div>
+</div>
+<!-- Metadata Under Card -->
+<div class="mt-3.5 text-left">
+<h5 class="text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-brand-crimson transition-colors">
+              Edisi 80
+            </h5>
+<p class="text-xs text-neutral-500 font-medium">Juli 2026</p>
+</div>
+</article>
+<!-- Card 3: Edisi 79 -->
+<article class="group flex flex-col" data-purpose="magazine-card">
+<div class="relative w-full aspect-[1/1.42] bg-gradient-to-br from-[#B3131B] via-[#9E1117] to-[#7B0D12] rounded-md shadow-book group-hover:shadow-book-hover group-hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer overflow-hidden border-t border-red-300/30">
+<!-- Spine Crease -->
+<div class="absolute inset-y-0 left-0 w-4 shelf-card-spine pointer-events-none"></div>
+<!-- Top Header -->
+<div class="relative z-10 text-[9px] tracking-wider uppercase font-bold text-white/90 border-b border-red-200/20 pb-1.5">
+              DPRD KOTA TANGERANG
+            </div>
+<!-- Minimal Graphic Element -->
+<div class="relative z-10 my-auto text-center">
+<span class="inline-block text-[11px] font-bold text-amber-200 uppercase tracking-widest">Edisi 79</span>
+<p class="text-[9px] text-white/70 mt-0.5">Juni 2026</p>
+</div>
+<!-- Cover Title -->
+<div class="relative z-10 border-t border-red-200/20 pt-2">
+<h4 class="font-serif italic font-bold text-lg sm:text-xl text-white tracking-normal leading-tight">
+                Parlementaria
+              </h4>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 p-3 z-30">
+<button class="w-full py-1.5 px-3 bg-brand-crimson text-white text-xs font-semibold rounded hover:bg-red-700 transition">
+                Baca Flipbook
+              </button>
+<button class="w-full py-1.5 px-3 bg-white/20 text-white text-xs font-medium rounded hover:bg-white/30 backdrop-blur-sm transition">
+                Unduh PDF
+              </button>
+</div>
+</div>
+<!-- Metadata Under Card -->
+<div class="mt-3.5 text-left">
+<h5 class="text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-brand-crimson transition-colors">
+              Edisi 79
+            </h5>
+<p class="text-xs text-neutral-500 font-medium">Juni 2026</p>
+</div>
+</article>
+<!-- Card 4: Edisi 78 -->
+<article class="group flex flex-col" data-purpose="magazine-card">
+<div class="relative w-full aspect-[1/1.42] bg-gradient-to-br from-[#B3131B] via-[#9E1117] to-[#7B0D12] rounded-md shadow-book group-hover:shadow-book-hover group-hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer overflow-hidden border-t border-red-300/30">
+<!-- Spine Crease -->
+<div class="absolute inset-y-0 left-0 w-4 shelf-card-spine pointer-events-none"></div>
+<!-- Top Header -->
+<div class="relative z-10 text-[9px] tracking-wider uppercase font-bold text-white/90 border-b border-red-200/20 pb-1.5">
+              DPRD KOTA TANGERANG
+            </div>
+<!-- Minimal Graphic Element -->
+<div class="relative z-10 my-auto text-center">
+<span class="inline-block text-[11px] font-bold text-amber-200 uppercase tracking-widest">Edisi 78</span>
+<p class="text-[9px] text-white/70 mt-0.5">Mei 2026</p>
+</div>
+<!-- Cover Title -->
+<div class="relative z-10 border-t border-red-200/20 pt-2">
+<h4 class="font-serif italic font-bold text-lg sm:text-xl text-white tracking-normal leading-tight">
+                Parlementaria
+              </h4>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 p-3 z-30">
+<button class="w-full py-1.5 px-3 bg-brand-crimson text-white text-xs font-semibold rounded hover:bg-red-700 transition">
+                Baca Flipbook
+              </button>
+<button class="w-full py-1.5 px-3 bg-white/20 text-white text-xs font-medium rounded hover:bg-white/30 backdrop-blur-sm transition">
+                Unduh PDF
+              </button>
+</div>
+</div>
+<!-- Metadata Under Card -->
+<div class="mt-3.5 text-left">
+<h5 class="text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-brand-crimson transition-colors">
+              Edisi 78
+            </h5>
+<p class="text-xs text-neutral-500 font-medium">Mei 2026</p>
+</div>
+</article>
+<!-- Card 5: Edisi 77 -->
+<article class="group flex flex-col" data-purpose="magazine-card">
+<div class="relative w-full aspect-[1/1.42] bg-gradient-to-br from-[#B3131B] via-[#9E1117] to-[#7B0D12] rounded-md shadow-book group-hover:shadow-book-hover group-hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer overflow-hidden border-t border-red-300/30">
+<!-- Spine Crease -->
+<div class="absolute inset-y-0 left-0 w-4 shelf-card-spine pointer-events-none"></div>
+<!-- Top Header -->
+<div class="relative z-10 text-[9px] tracking-wider uppercase font-bold text-white/90 border-b border-red-200/20 pb-1.5">
+              DPRD KOTA TANGERANG
+            </div>
+<!-- Minimal Graphic Element -->
+<div class="relative z-10 my-auto text-center">
+<span class="inline-block text-[11px] font-bold text-amber-200 uppercase tracking-widest">Edisi 77</span>
+<p class="text-[9px] text-white/70 mt-0.5">April 2026</p>
+</div>
+<!-- Cover Title -->
+<div class="relative z-10 border-t border-red-200/20 pt-2">
+<h4 class="font-serif italic font-bold text-lg sm:text-xl text-white tracking-normal leading-tight">
+                Parlementaria
+              </h4>
+</div>
+<!-- Quick Action Hover Overlay -->
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 p-3 z-30">
+<button class="w-full py-1.5 px-3 bg-brand-crimson text-white text-xs font-semibold rounded hover:bg-red-700 transition">
+                Baca Flipbook
+              </button>
+<button class="w-full py-1.5 px-3 bg-white/20 text-white text-xs font-medium rounded hover:bg-white/30 backdrop-blur-sm transition">
+                Unduh PDF
+              </button>
+</div>
+</div>
+<!-- Metadata Under Card -->
+<div class="mt-3.5 text-left">
+<h5 class="text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-brand-crimson transition-colors">
+              Edisi 77
+            </h5>
+<p class="text-xs text-neutral-500 font-medium">April 2026</p>
+</div>
+</article>
+</div>
+<!-- Load More / Full Archive CTA -->
+<div class="mt-12 text-center">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border border-neutral-300 text-neutral-700 bg-white hover:bg-neutral-50 hover:border-neutral-400 transition shadow-sm" href="#arsip">
+<span class="">Lihat Semua Arsip Edisi Terdahulu</span>
+<svg class="w-4 h-4 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</section>
+<!-- END: MagazineShelfSection -->
+<!-- BEGIN: InteractiveFeaturesBanner -->
+<!-- Feature highlight block emphasizing reader capabilities -->
+<section class="bg-surface-creamDark py-12 border-y border-neutral-200/80" id="fitur">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm border border-neutral-200 flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="space-y-2 text-center lg:text-left">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-crimson">Pengalaman Membaca Modern</span>
+<h3 class="font-serif text-2xl sm:text-3xl font-bold text-neutral-900">
+              Flipbook Interaktif &amp; Aksesibilitas Terpadu
+            </h3>
+<p class="text-sm sm:text-base text-neutral-600 max-w-2xl font-light">
+              Nikmati kenyamanan membaca majalah Parlementaria dengan animasi pembalik halaman alami, fungsi zoom definisi tinggi, bookmark artikel favorit, dan pencarian teks penuh.
+            </p>
+</div>
+<!-- Feature badges -->
+<div class="flex items-center flex-wrap justify-center gap-4 shrink-0">
+<div class="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-surface-cream text-neutral-800 text-xs font-semibold border border-neutral-200">
+<svg class="w-4 h-4 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Pencarian Kata Kunci</span>
+</div>
+<div class="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-surface-cream text-neutral-800 text-xs font-semibold border border-neutral-200">
+<svg class="w-4 h-4 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Unduh Arsip Lengkap</span>
+</div>
+<div class="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-surface-cream text-neutral-800 text-xs font-semibold border border-neutral-200">
+<svg class="w-4 h-4 text-brand-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Responsif Ponsel &amp; Tablet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: InteractiveFeaturesBanner -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: SiteFooter -->
+<!-- Matches official government footer format in Indonesian -->
+<footer id="footer" class="text-xs sm:text-sm" style="background-color: rgb(27, 27, 31); border-top: 6px solid rgb(179, 19, 27);">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-14 lg:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <!-- Column 1: Site Info -->
+      <div class="flex flex-col justify-start">
+        <h4 class="font-serif text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">
+          E-Paper DPRD Kota Tangerang
+        </h4>
+        <p class="text-[#E8E6E1] text-sm leading-relaxed font-normal">
+          Majalah digital resmi Sekretariat DPRD Kota Tangerang. Baca gratis, kapan saja, di perangkat apa saja.
+        </p>
+      </div>
+      <!-- Column 2: Menu Links -->
+      <div class="flex flex-col justify-start">
+        <h5 class="text-[#FF8A8F] text-xs font-semibold uppercase tracking-widest mb-4">
+          MENU
+        </h5>
+        <nav class="flex flex-col space-y-2.5 text-sm text-[#E8E6E1]">
+          <a href="#hero" class="hover:text-white transition-colors duration-200">Beranda</a>
+          <a href="#rak-edisi" class="hover:text-white transition-colors duration-200">Majalah</a>
+          <a href="#fitur" class="hover:text-white transition-colors duration-200">Arsip</a>
+          <a href="#footer" class="hover:text-white transition-colors duration-200">Tentang</a>
+        </nav>
+      </div>
+      <!-- Column 3: Kontak -->
+      <div class="flex flex-col justify-start">
+        <h5 class="text-[#FF8A8F] text-xs font-semibold uppercase tracking-widest mb-4">
+          KONTAK
+        </h5>
+        <div class="flex flex-col space-y-2 text-sm leading-relaxed text-[#E8E6E1]">
+          <p class="">Gedung DPRD Kota Tangerang, Jl. Satria Sudirman No. 1, Sukaasih, Tangerang</p>
+          <p class="">Telepon: <a href="tel:02155769051" class="hover:text-white transition-colors duration-200">(021) 5576-9051</a></p>
+          <p class="">Email: <a href="mailto:sekretariat@dprd.tangerangkota.go.id" class="hover:text-white transition-colors duration-200">sekretariat@dprd.tangerangkota.go.id</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Divider Line -->
+    <div class="border-t border-white/10 mt-12 mb-6"></div>
+    <!-- Bottom Copyright -->
+    <div class="text-[#E8E6E1]/80 text-xs md:text-sm text-center md:text-left">
+      <p class="">© 2026 Sekretariat DPRD Kota Tangerang. Hak cipta dilindungi.</p>
+    </div>
+  </div>
+</footer>
+<!-- END: SiteFooter -->
+<!-- JavaScript: Light interactivity for shelf filter toggles -->
+<script data-purpose="shelf-filter-interaction">
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('[data-purpose="shelf-filters"] button');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => {
+            btn.classList.remove('bg-brand-crimson', 'text-white');
+            btn.classList.add('bg-white', 'text-neutral-700', 'border', 'border-neutral-300');
+          });
+          button.classList.add('bg-brand-crimson', 'text-white');
+          button.classList.remove('bg-white', 'text-neutral-700', 'border', 'border-neutral-300');
+        });
+      });
+    });
+  </script>
+
+
+</body></html>
