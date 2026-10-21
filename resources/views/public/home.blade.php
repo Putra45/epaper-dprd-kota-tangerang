@@ -136,7 +136,15 @@
             <x-shelf-filters />
         </div>
 
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-7 lg:gap-8">
+        @php
+            $shelfCount = count($shelf);
+        @endphp
+        <div class="mt-10 grid gap-6 sm:gap-7 lg:gap-8
+            @if($shelfCount === 1) grid-cols-1 max-w-md mx-auto
+            @elseif($shelfCount === 2) grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto
+            @elseif($shelfCount === 3) grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+            @else grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+            @endif">
             @foreach ($shelf as $edition)
                 <x-edition-card :edition="$edition" />
             @endforeach

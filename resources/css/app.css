@@ -10,8 +10,8 @@
  * Font dimuat lewat <link> di layout: Merriweather (judul) + Plus Jakarta Sans (isi).
  */
 @theme {
-    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Merriweather', Georgia, serif;
+    --font-sans: 'Montserrat', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
 
     /* === Palet Resmi E-Paper DPRD Kota Tangerang === */
 
