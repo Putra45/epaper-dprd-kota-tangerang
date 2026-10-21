@@ -20,32 +20,32 @@
                 }, 5000);
             }
         }"
-        class="relative bg-[#0F3460] text-white overflow-hidden py-14 lg:py-20 border-b border-[#0F3460]"
+        class="relative bg-slate-950 text-white overflow-hidden py-14 lg:py-20 border-b border-neutral-800"
     >
-        {{-- Slideshow Background Foto Gedung DPRD Semi-Transparan --}}
+        {{-- Slideshow Background Foto Gedung DPRD (Dominan & Jelas) --}}
         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
             {{-- Slide 1: hero-bg-dprd.jpg --}}
             <div 
                 class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-                :class="activeSlide === 0 ? 'opacity-35' : 'opacity-0'"
-                style="opacity: 0.35;"
+                :class="activeSlide === 0 ? 'opacity-100' : 'opacity-0'"
+                style="opacity: 1;"
             >
-                <img src="{{ asset('images/hero-bg-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 1" class="w-full h-full object-cover object-center scale-105">
+                <img src="{{ asset('images/hero-bg-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 1" class="w-full h-full object-cover object-center scale-100">
             </div>
 
             {{-- Slide 2: hero-bg2-dprd.jpg --}}
             <div 
                 class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-                :class="activeSlide === 1 ? 'opacity-35' : 'opacity-0'"
+                :class="activeSlide === 1 ? 'opacity-100' : 'opacity-0'"
                 x-cloak
             >
-                <img src="{{ asset('images/hero-bg2-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 2" class="w-full h-full object-cover object-center scale-105">
+                <img src="{{ asset('images/hero-bg2-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 2" class="w-full h-full object-cover object-center scale-100">
             </div>
 
-            {{-- Gradient overlay biru institusional (#0F3460 & #174A7E) agar tetap anggun & teks sangat jelas terbaca --}}
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0F3460] via-[#174A7E]/65 to-[#0F3460]/90"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0F3460]/85 via-transparent to-[#0F3460]/85"></div>
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-crimson-light/20 rounded-full blur-3xl"></div>
+            {{-- Overlay tipis transparan agar foto gedung tetap hidup dan dominan, namun teks tetap kontras --}}
+            <div class="absolute inset-0 bg-black/45"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/50"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -58,30 +58,30 @@
 
                 <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 text-center lg:text-left">
                     <div class="flex items-center justify-center lg:justify-start gap-2">
-                        <span class="px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-accent bg-accent/10 border border-accent/30 rounded">EDISI TERBARU</span>
-                        <span class="text-xs text-neutral-400 font-medium">{{ ucfirst($latest->category) }} &bull; {{ $latest->release_date ? $latest->release_date->translatedFormat('F Y') : '' }}</span>
+                        <span class="px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-accent bg-black/40 border border-accent/40 rounded backdrop-blur-xs shadow-sm">EDISI TERBARU</span>
+                        <span class="text-xs text-neutral-200 font-medium drop-shadow-sm">{{ ucfirst($latest->category) }} &bull; {{ $latest->release_date ? $latest->release_date->translatedFormat('F Y') : '' }}</span>
                     </div>
 
-                    <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.18]">{{ $latest->title }}</h1>
+                    <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.18] drop-shadow-md">{{ $latest->title }}</h1>
 
-                    <p class="text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    <p class="text-base sm:text-lg text-neutral-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal drop-shadow-sm">
                         {{ $latest->description ?: 'Laporan utama dari Kota Tangerang: capaian fungsi legislasi daerah, pengawasan tata kelola perkotaan, dan tindak lanjut aspirasi masyarakat.' }}
                     </p>
 
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-                        <a href="{{ url('/baca/' . $latest->slug) }}" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-crimson-light hover:bg-crimson-soft text-white font-semibold text-sm shadow-lg shadow-crimson/30 hover:shadow-glow transition-all active:scale-95">
+                        <a href="{{ url('/baca/' . $latest->slug) }}" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-crimson-light hover:bg-crimson-soft text-white font-semibold text-sm shadow-lg shadow-black/40 hover:shadow-glow transition-all active:scale-95">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
                             Baca Sekarang
                         </a>
                         @if ($latest->allow_download)
-                            <a href="{{ url('/unduh/' . $latest->slug) }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium text-sm border border-neutral-700 hover:border-neutral-500 transition-all">
+                            <a href="{{ url('/unduh/' . $latest->slug) }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-black/40 hover:bg-black/60 text-white font-medium text-sm border border-white/20 hover:border-white/40 backdrop-blur-xs transition-all shadow-sm">
                                 <svg class="w-4 h-4 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
                                 Unduh PDF
                             </a>
                         @endif
                     </div>
 
-                    <ul class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs text-neutral-400 font-medium">
+                    <ul class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs text-neutral-200 font-medium drop-shadow-sm">
                         <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>{{ $latest->release_date ? $latest->release_date->translatedFormat('d F Y') : '' }}</li>
                         <li aria-hidden="true">•</li>
                         <li>{{ $latest->total_pages }} Halaman</li>
