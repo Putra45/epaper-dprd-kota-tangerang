@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="title">Majalah — E-Paper DPRD Kota Tangerang</x-slot>
+    <x-slot name="title">Majalah — ePaper DPRD Kota Tangerang</x-slot>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-cream" aria-labelledby="judul-katalog">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-neutral-200">

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Review & Terbitkan Edisi - E-Paper Parlementaria')
+@section('title', 'Review & Terbitkan Edisi — ePaper Parlementaria')
 
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>

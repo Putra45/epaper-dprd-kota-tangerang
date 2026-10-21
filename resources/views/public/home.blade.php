@@ -1,11 +1,15 @@
 <x-app-layout>
-    <x-slot name="title">E-Paper DPRD Kota Tangerang — Majalah Parlementaria</x-slot>
+    <x-slot name="title">ePaper DPRD Kota Tangerang — Majalah Parlementaria</x-slot>
 
     {{-- Hero: edisi terbaru --}}
     @if($latest)
-    <section class="relative bg-ink text-white overflow-hidden py-14 lg:py-20 border-b border-neutral-800">
-        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-crimson-light/15 rounded-full blur-3xl"></div>
+    <section class="relative bg-ink text-white overflow-hidden py-14 lg:py-20 border-b border-[#0F3460]">
+        {{-- Background Foto Gedung DPRD Semi-Transparan --}}
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+            <img src="{{ asset('images/hero-bg-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang" class="w-full h-full object-cover object-center scale-105 opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F3460] via-transparent to-[#0F3460]/80"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0F3460]/80 via-transparent to-[#0F3460]/80"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-crimson-light/20 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

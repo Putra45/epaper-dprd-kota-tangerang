@@ -19,7 +19,7 @@
             <div class="flex min-h-full items-center justify-center p-4">
                 <div x-show="open" x-transition class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 shadow-2xl transition-all border border-[var(--color-neutral-border)]">
                     <div class="flex items-center justify-between pb-4 border-b border-stone-100">
-                        <h3 class="text-base font-bold text-[var(--color-deep-charcoal)]">Bagikan E-Paper Ini</h3>
+                        <h3 class="text-base font-bold text-[var(--color-deep-charcoal)]">Bagikan ePaper Ini</h3>
                         <button @click="open = false" type="button" class="text-stone-400 hover:text-stone-600 p-1">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>

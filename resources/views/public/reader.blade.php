@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $edition->title }} - E-Paper DPRD Kota Tangerang</title>
+    <title>{{ $edition->title }} — ePaper DPRD Kota Tangerang</title>
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     

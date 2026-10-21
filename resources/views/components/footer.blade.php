@@ -2,7 +2,10 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-14 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             <div>
-                <h2 class="font-serif text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">E-Paper DPRD Kota Tangerang</h2>
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="{{ asset('images/logo-dprd.png') }}" alt="Logo DPRD Kota Tangerang" class="h-10 w-auto object-contain bg-white/10 p-1 rounded-md">
+                    <h2 class="font-serif text-xl md:text-2xl font-bold text-white tracking-tight">ePaper DPRD</h2>
+                </div>
                 <p class="text-footer-text leading-relaxed">
                     Majalah digital resmi Sekretariat DPRD Kota Tangerang. Baca gratis, kapan saja, di perangkat apa saja.
                 </p>

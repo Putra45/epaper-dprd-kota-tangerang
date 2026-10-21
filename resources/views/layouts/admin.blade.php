@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Panel Admin - E-Paper Parlementaria DPRD Kota Tangerang')</title>
+    <title>@yield('title', 'Panel Admin — ePaper Parlementaria DPRD Kota Tangerang')</title>
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
@@ -62,7 +62,7 @@
                 </div>
                 <div class="flex items-center space-x-2 text-xs sm:text-sm text-gray-500">
                     <span class="hidden sm:inline">•</span>
-                    <span class="font-medium text-gray-700">E-Paper Parlementaria DPRD Kota Tangerang</span>
+                    <span class="font-medium text-gray-700">ePaper Parlementaria DPRD Kota Tangerang</span>
                     <a class="inline-flex items-center text-xs font-semibold text-[#B3131B] hover:underline ml-2 bg-[#FDF2F2] px-2 py-0.5 rounded transition" href="{{ route('home') }}">
                         &larr; Lihat Portal Utama
                     </a>
@@ -93,7 +93,7 @@
 
     <footer class="w-full border-t border-gray-200 bg-[#FAF7F2] py-4 text-center text-xs text-gray-500 mt-6">
         <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; {{ date('Y') }} Sekretariat DPRD Kota Tangerang. Sistem Manajemen E-Paper Parlementaria.</p>
+            <p>&copy; {{ date('Y') }} Sekretariat DPRD Kota Tangerang. Sistem Manajemen ePaper Parlementaria.</p>
         </div>
     </footer>
 

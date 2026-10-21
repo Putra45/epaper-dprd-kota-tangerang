@@ -17,7 +17,7 @@
             <div class="flex min-h-full items-start justify-center p-4 pt-16 sm:p-6 sm:pt-20">
                 <div x-show="open" x-transition class="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 shadow-2xl transition-all border border-[var(--color-neutral-border)]">
                     <div class="flex items-center justify-between pb-4 border-b border-stone-100">
-                        <h3 class="text-base font-bold text-[var(--color-deep-charcoal)]">Pencarian E-Paper</h3>
+                        <h3 class="text-base font-bold text-[var(--color-deep-charcoal)]">Pencarian ePaper</h3>
                         <button @click="open = false" type="button" class="text-stone-400 hover:text-stone-600 p-1">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>

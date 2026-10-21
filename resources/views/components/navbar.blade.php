@@ -10,14 +10,10 @@
 
 <header x-data="{ menu: false }" class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-neutral-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-        <a href="{{ url('/') }}" class="flex items-center gap-3.5 group shrink-0">
-            <span class="w-11 h-11 rounded-lg bg-crimson flex items-center justify-center shadow-md shadow-crimson/25 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-                </svg>
-            </span>
+        <a href="{{ url('/') }}" class="flex items-center gap-3 group shrink-0">
+            <img src="{{ asset('images/logo-dprd.png') }}" alt="Logo DPRD Kota Tangerang" class="h-12 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-sm">
             <span class="flex flex-col">
-                <span class="font-bold tracking-tight text-lg text-neutral-900 leading-tight">E-Paper DPRD</span>
+                <span class="font-bold tracking-tight text-lg text-neutral-900 leading-tight">ePaper DPRD</span>
                 <span class="text-[11px] font-semibold tracking-wider text-neutral-500 uppercase">Kota Tangerang • Parlementaria</span>
             </span>
         </a>
