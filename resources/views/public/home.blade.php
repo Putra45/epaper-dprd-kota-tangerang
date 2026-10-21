@@ -42,16 +42,16 @@
                 <img src="{{ asset('images/hero-bg2-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 2" class="w-full h-full object-cover object-center scale-100">
             </div>
 
-            {{-- Overlay tipis transparan agar foto gedung tetap hidup dan dominan, namun teks tetap kontras --}}
-            <div class="absolute inset-0 bg-black/45"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/50"></div>
+            {{-- Overlay natural & lembut transparan agar foto gedung alami & nyaman dipandang --}}
+            <div class="absolute inset-0 bg-black/25"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-black/50"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 <div class="lg:col-span-5 flex justify-center hero-book-perspective order-2 lg:order-1">
-                    <a href="{{ url('/baca/' . $latest->slug) }}" class="hero-book-cover block w-64 sm:w-72 md:w-80 aspect-[1/1.34] rounded-r-md rounded-l-sm overflow-hidden border-t border-r border-red-400/20 shadow-2xl" aria-label="Baca {{ $latest->category }} Edisi {{ $latest->id }}">
+                    <a href="{{ url('/baca/' . $latest->slug) }}" class="hero-book-cover block w-64 sm:w-72 md:w-80 aspect-[1/1.34] rounded-r-md rounded-l-sm overflow-hidden border-t border-r border-white/20 shadow-lg" aria-label="Baca {{ $latest->category }} Edisi {{ $latest->id }}">
                         <x-magazine-cover :edition="$latest" size="hero" />
                     </a>
                 </div>
