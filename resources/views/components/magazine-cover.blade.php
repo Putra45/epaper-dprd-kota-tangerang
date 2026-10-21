@@ -20,28 +20,28 @@
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
 
         {{-- Fallback jika file gambar tidak ditemukan di storage --}}
-        <div style="display: none;" class="w-full h-full bg-gradient-to-br from-crimson via-[#9E1117] to-[#7B0D12] flex-col justify-between overflow-hidden select-none {{ $hero ? 'p-6 sm:p-7' : 'p-4' }}" role="img">
+        <div style="display: none;" class="w-full h-full bg-gradient-to-br from-primary via-[#1A5A9A] to-[#0F3460] flex-col justify-between overflow-hidden select-none {{ $hero ? 'p-6 sm:p-7' : 'p-4' }}" role="img">
             <div class="border-b border-red-200/25 pb-1.5 flex justify-between items-center">
                 <span class="text-[9px] font-bold uppercase tracking-wider text-white/90">DPRD Kota Tangerang</span>
                 <span class="text-[9px] font-semibold bg-white/20 px-2 py-0.5 rounded text-white tracking-wider uppercase">{{ $edition->category }}</span>
             </div>
-            <p class="mt-2 text-xs font-bold text-amber-200 line-clamp-2">{{ $edition->title }}</p>
-            <div class="border-t border-red-200/25 pt-2">
+            <p class="mt-2 text-xs font-bold text-accent line-clamp-2">{{ $edition->title }}</p>
+            <div class="border-t border-[#1A5A9A]/40 pt-2">
                 <p class="font-serif italic font-bold text-white text-base">{{ ucfirst($edition->category) }}</p>
             </div>
         </div>
     </div>
 @else
     {{-- Sampul cadangan bergaya buku, dipakai jika gambar sampul dari PDF belum selesai diproses --}}
-    <div {{ $attributes->merge(['class' => 'relative w-full h-full bg-gradient-to-br from-crimson via-[#9E1117] to-[#7B0D12] flex flex-col justify-between overflow-hidden select-none ' . ($hero ? 'p-6 sm:p-7' : 'p-4')]) }} role="img" aria-label="Sampul {{ $edition->category }} - {{ $edition->title }}">
+    <div {{ $attributes->merge(['class' => 'relative w-full h-full bg-gradient-to-br from-primary via-[#1A5A9A] to-[#0F3460] flex flex-col justify-between overflow-hidden select-none ' . ($hero ? 'p-6 sm:p-7' : 'p-4')]) }} role="img" aria-label="Sampul {{ $edition->category }} - {{ $edition->title }}">
         <div class="absolute inset-y-0 left-0 {{ $hero ? 'w-8' : 'w-4' }} cover-spine pointer-events-none z-20"></div>
 
         <div class="relative z-10 {{ $hero ? 'pt-1' : '' }}">
-            <div class="flex items-center justify-between border-b border-red-200/25 {{ $hero ? 'pb-3' : 'pb-1.5' }}">
+            <div class="flex items-center justify-between border-b border-[#1A5A9A]/40 {{ $hero ? 'pb-3' : 'pb-1.5' }}">
                 <span class="{{ $hero ? 'text-[10px] sm:text-xs tracking-widest' : 'text-[9px] tracking-wider' }} font-bold uppercase text-white/90">DPRD Kota Tangerang</span>
                 <span class="text-[9px] font-semibold bg-white/20 px-2 py-0.5 rounded text-white tracking-wider uppercase">{{ $edition->category }}</span>
             </div>
-            <p class="mt-3 text-xs sm:text-sm tracking-wide font-extrabold text-amber-200 line-clamp-2">{{ $edition->title }}</p>
+            <p class="mt-3 text-xs sm:text-sm tracking-wide font-extrabold text-accent line-clamp-2">{{ $edition->title }}</p>
             <p class="text-[10px] text-white/70 tracking-wide mt-0.5">{{ $edition->release_date ? $edition->release_date->translatedFormat('d M Y') : '' }}</p>
         </div>
 
@@ -52,7 +52,7 @@
             <p class="text-[10px] tracking-widest uppercase font-semibold text-white/80 mt-2">E-Paper Resmi</p>
         </div>
 
-        <div class="relative z-10 border-t border-red-200/25 {{ $hero ? 'pt-3' : 'pt-2' }}">
+        <div class="relative z-10 border-t border-[#1A5A9A]/40 {{ $hero ? 'pt-3' : 'pt-2' }}">
             <p class="font-serif italic font-bold text-white leading-tight {{ $hero ? 'text-2xl sm:text-3xl drop-shadow-md' : 'text-base sm:text-lg' }}">{{ ucfirst($edition->category) }}</p>
             @if ($hero)
                 <p class="text-[11px] text-white/80 font-medium tracking-wide mt-1">Sekretariat DPRD Kota Tangerang</p>

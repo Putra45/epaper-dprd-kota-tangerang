@@ -1,4 +1,4 @@
-<footer id="kontak" class="bg-ink border-t-[6px] border-crimson text-sm">
+<footer id="kontak" class="bg-primary border-t-[6px] border-accent text-sm">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-14 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             <div>
@@ -9,7 +9,7 @@
             </div>
 
             <div>
-                <h3 class="text-crimson-soft text-xs font-semibold uppercase tracking-widest mb-4">Menu</h3>
+                <h3 class="text-accent text-xs font-semibold uppercase tracking-widest mb-4">Menu</h3>
                 <nav class="flex flex-col gap-2.5 text-footer-text" aria-label="Menu footer">
                     <a href="{{ url('/') }}" class="hover:text-white transition-colors">Beranda</a>
                     <a href="{{ url('/majalah') }}" class="hover:text-white transition-colors">Majalah</a>
@@ -18,7 +18,7 @@
             </div>
 
             <div>
-                <h3 class="text-crimson-soft text-xs font-semibold uppercase tracking-widest mb-4">Kontak</h3>
+                <h3 class="text-accent text-xs font-semibold uppercase tracking-widest mb-4">Kontak</h3>
                 <address class="not-italic flex flex-col gap-2 leading-relaxed text-footer-text">
                     <p>Gedung DPRD Kota Tangerang, Jl. Satria Sudirman No. 1, Sukaasih, Tangerang</p>
                     <p>Telepon: <a href="tel:02155769051" class="hover:text-white transition-colors">(021) 5576-9051</a></p>

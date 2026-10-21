@@ -20,8 +20,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')
 </head>
-<body class="bg-cream text-neutral-800 font-sans antialiased min-h-screen flex flex-col selection:bg-crimson selection:text-white">
-    <a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:bg-crimson focus:text-white focus:rounded-md">Lewati ke konten</a>
+<body class="bg-bg text-charcoal font-sans antialiased min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md">Lewati ke konten</a>
 
     <x-navbar />
 

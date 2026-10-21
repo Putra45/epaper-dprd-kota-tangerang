@@ -13,33 +13,61 @@
     --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     --font-serif: 'Merriweather', Georgia, serif;
 
-    --color-crimson: #B3131B;
-    --color-crimson-dark: #8F0E14;
-    --color-crimson-light: #DC2626;
-    --color-crimson-soft: #FF8A8F;
+    /* === Palet Resmi E-Paper DPRD Kota Tangerang === */
 
-    --color-cream: #FAF7F2;
-    --color-cream-dark: #F3EEE5;
-    --color-ink: #1B1B1F;
-    --color-surface-dark: #141416;
-    --color-reader-bg: #19191D;
-    --color-reader-panel: #212126;
-    --color-reader-footer: #1F1F23;
+    /* Primary — Biru Institusional */
+    --color-primary: #174A7E;
+    --color-primary-dark: #0F3460;
+    --color-primary-light: #1E5A96;
+
+    /* Secondary — Biru Terang (Interaktif) */
+    --color-secondary: #2878B5;
+    --color-secondary-dark: #1E639A;
+    --color-secondary-light: #3A8FCC;
+
+    /* Accent — Emas / Gold */
+    --color-accent: #E8B44A;
+    --color-accent-dark: #C99530;
+    --color-accent-light: #F0C96A;
+
+    /* Background & Surface */
+    --color-bg: #F4F6F9;
+    --color-surface: #FFFFFF;
+
+    /* Text / Contrast */
+    --color-charcoal: #273444;
+    --color-muted: #64748B;
     --color-footer-text: #E8E6E1;
 
-    --shadow-book: 0 16px 36px -10px rgba(0, 0, 0, 0.4), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
-    --shadow-book-hover: 0 24px 44px -12px rgba(179, 19, 27, 0.35), 0 12px 24px -10px rgba(0, 0, 0, 0.45);
-    --shadow-glow: 0 0 45px -8px rgba(179, 19, 27, 0.45);
+    /* Dark areas (hero / reader) */
+    --color-ink: #174A7E;
+    --color-surface-dark: #0F3460;
+    --color-reader-bg: #0D2A4A;
+    --color-reader-panel: #163B6B;
+    --color-reader-footer: #122F54;
+
+    /* Shadows */
+    --shadow-book: 0 16px 36px -10px rgba(23, 74, 126, 0.4), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+    --shadow-book-hover: 0 24px 44px -12px rgba(23, 74, 126, 0.45), 0 12px 24px -10px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 45px -8px rgba(40, 120, 181, 0.55);
     --shadow-spread: 0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 40px rgba(0, 0, 0, 0.55);
 
-    /* Alias lama, masih dipakai layout admin sampai Tahap 5 */
-    --color-primary-red: #B3131B;
-    --color-primary-red-hover: #8F0E14;
-    --color-primary-red-light: #FDF2F2;
-    --color-deep-charcoal: #1B1B1F;
-    --color-warm-cream: #FAF7F2;
-    --color-neutral-border: #E2DDD5;
-    --color-muted-text: #71717A;
+    /* Alias untuk kompatibilitas admin layout */
+    --color-primary-red: #174A7E;
+    --color-primary-red-hover: #0F3460;
+    --color-primary-red-light: #EEF4FB;
+    --color-deep-charcoal: #273444;
+    --color-warm-cream: #F4F6F9;
+    --color-neutral-border: #D1DBE8;
+    --color-muted-text: #64748B;
+
+    /* Alias crimson → primary (backward-compat) */
+    --color-crimson: #174A7E;
+    --color-crimson-dark: #0F3460;
+    --color-crimson-light: #2878B5;
+    --color-crimson-soft: #7FB3D9;
+    --color-cream: #F4F6F9;
+    --color-cream-dark: #E8EDF5;
 }
 
 @layer base {
@@ -56,11 +84,11 @@
 .hero-book-cover {
     transform: rotateY(-11deg) rotateX(4deg) rotateZ(-2deg);
     transition: transform .4s cubic-bezier(.16, 1, .3, 1), box-shadow .4s ease;
-    box-shadow: -14px 18px 40px rgba(0, 0, 0, .65), -2px 0 10px rgba(0, 0, 0, .45);
+    box-shadow: -14px 18px 40px rgba(23, 74, 126, .65), -2px 0 10px rgba(0, 0, 0, .45);
 }
 .hero-book-cover:hover {
     transform: rotateY(-4deg) rotateX(2deg) rotateZ(0) scale(1.02);
-    box-shadow: -18px 24px 50px rgba(0, 0, 0, .75), 0 0 30px rgba(179, 19, 27, .3);
+    box-shadow: -18px 24px 50px rgba(23, 74, 126, .75), 0 0 30px rgba(40, 120, 181, .4);
 }
 
 /* Bayangan punggung buku pada cover */
@@ -81,7 +109,7 @@
 .thin-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
 .thin-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, .05); border-radius: 9999px; }
 .thin-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .2); border-radius: 9999px; }
-.thin-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-crimson); }
+.thin-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-secondary); }
 
 @media (prefers-reduced-motion: reduce) {
     .hero-book-cover, .hero-book-cover:hover { transform: none; transition: none; }
