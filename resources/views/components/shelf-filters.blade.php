@@ -20,7 +20,7 @@
     @foreach ($pills as $pill)
         <a href="{{ $action . ($pill['query'] ? '?' . http_build_query($pill['query']) : '') }}"
            @if ($pill['active']) aria-current="true" @endif
-           class="px-4 py-1.5 text-sm font-semibold rounded-full transition {{ $pill['active'] ? 'bg-secondary text-white shadow-sm hover:bg-secondary-dark' : 'bg-surface text-charcoal border border-[#D1DBE8] hover:bg-bg' }}">
+           class="px-4 py-1.5 text-sm font-semibold rounded-full transition {{ $pill['active'] ? 'bg-crimson-light text-white shadow-sm hover:bg-crimson' : 'bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100' }}">
             {{ $pill['label'] }}
         </a>
     @endforeach

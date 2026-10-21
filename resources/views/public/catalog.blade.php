@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="title">Majalah — E-Paper DPRD Kota Tangerang</x-slot>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-bg" aria-labelledby="judul-katalog">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#D1DBE8]">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-cream" aria-labelledby="judul-katalog">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-neutral-200">
             <div>
-                <h1 id="judul-katalog" class="font-serif text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">Majalah</h1>
-                <p class="text-sm text-muted mt-1.5">
+                <h1 id="judul-katalog" class="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight">Majalah</h1>
+                <p class="text-sm text-neutral-500 mt-1.5">
                     @if ($q)
-                        {{ count($editions) }} hasil untuk “{{ $q }}”.
+                        {{ count($editions) }} hasil untuk "{{ $q }}".
                     @else
                         Semua edisi yang telah terbit.
                     @endif
@@ -23,17 +23,17 @@
             <div class="relative w-full sm:max-w-sm">
                 <label for="cari-katalog" class="sr-only">Cari judul atau nomor edisi</label>
                 <input id="cari-katalog" type="search" name="q" value="{{ $q }}" placeholder="Cari judul atau nomor edisi"
-                       class="w-full pl-9 pr-4 py-2 text-sm bg-surface border border-[#D1DBE8] rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary">
+                       class="w-full pl-9 pr-4 py-2 text-sm bg-white border border-neutral-300 rounded-full focus:outline-none focus:ring-2 focus:ring-crimson-light focus:border-crimson-light">
                 <svg class="w-4 h-4 text-neutral-400 absolute left-3 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" stroke-linecap="round" stroke-width="2"/></svg>
             </div>
 
             <div class="flex items-center gap-2 text-sm">
                 <label for="urut" class="text-neutral-500">Urutkan</label>
-                <select id="urut" name="urut" onchange="this.form.submit()" class="py-2 pl-3 pr-8 rounded-full border border-[#D1DBE8] bg-surface text-sm font-semibold text-charcoal focus:outline-none focus:ring-2 focus:ring-secondary">
+                <select id="urut" name="urut" onchange="this.form.submit()" class="py-2 pl-3 pr-8 rounded-full border border-neutral-300 bg-white text-sm font-semibold text-neutral-700 focus:outline-none focus:ring-2 focus:ring-crimson-light">
                     <option value="terbaru" @selected($sort === 'terbaru')>Terbaru</option>
                     <option value="terlama" @selected($sort === 'terlama')>Terlama</option>
                 </select>
-                <noscript><button class="px-3 py-2 rounded-full bg-secondary text-white text-sm font-semibold">Terapkan</button></noscript>
+                <noscript><button class="px-3 py-2 rounded-full bg-crimson-light text-white text-sm font-semibold">Terapkan</button></noscript>
             </div>
         </form>
 
@@ -45,8 +45,8 @@
             </div>
         @else
             <div class="mt-16 text-center">
-                <p class="font-serif text-xl text-charcoal">Edisi tidak ditemukan</p>
-                <p class="text-sm text-muted mt-2">Coba kata kunci lain atau <a href="{{ url('/majalah') }}" class="text-secondary font-semibold underline underline-offset-2">tampilkan semua edisi</a>.</p>
+                <p class="font-serif text-xl text-neutral-900">Edisi tidak ditemukan</p>
+                <p class="text-sm text-neutral-500 mt-2">Coba kata kunci lain atau <a href="{{ url('/majalah') }}" class="text-crimson-light font-semibold underline underline-offset-2">tampilkan semua edisi</a>.</p>
             </div>
         @endif
     </section>
