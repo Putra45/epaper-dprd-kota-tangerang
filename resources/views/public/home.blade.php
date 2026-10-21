@@ -3,12 +3,48 @@
 
     {{-- Hero: edisi terbaru --}}
     @if($latest)
-    <section class="relative bg-ink text-white overflow-hidden py-14 lg:py-20 border-b border-[#0F3460]">
-        {{-- Background Foto Gedung DPRD Semi-Transparan --}}
+    <section 
+        x-data="{
+            activeSlide: 0,
+            timer: null,
+            init() {
+                this.timer = setInterval(() => {
+                    this.activeSlide = this.activeSlide === 0 ? 1 : 0;
+                }, 5000);
+            },
+            goTo(index) {
+                this.activeSlide = index;
+                clearInterval(this.timer);
+                this.timer = setInterval(() => {
+                    this.activeSlide = this.activeSlide === 0 ? 1 : 0;
+                }, 5000);
+            }
+        }"
+        class="relative bg-[#0F3460] text-white overflow-hidden py-14 lg:py-20 border-b border-[#0F3460]"
+    >
+        {{-- Slideshow Background Foto Gedung DPRD Semi-Transparan --}}
         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-            <img src="{{ asset('images/hero-bg-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang" class="w-full h-full object-cover object-center scale-105 opacity-25">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0F3460] via-transparent to-[#0F3460]/80"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0F3460]/80 via-transparent to-[#0F3460]/80"></div>
+            {{-- Slide 1: hero-bg-dprd.jpg --}}
+            <div 
+                class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                :class="activeSlide === 0 ? 'opacity-35' : 'opacity-0'"
+                style="opacity: 0.35;"
+            >
+                <img src="{{ asset('images/hero-bg-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 1" class="w-full h-full object-cover object-center scale-105">
+            </div>
+
+            {{-- Slide 2: hero-bg2-dprd.jpg --}}
+            <div 
+                class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                :class="activeSlide === 1 ? 'opacity-35' : 'opacity-0'"
+                x-cloak
+            >
+                <img src="{{ asset('images/hero-bg2-dprd.jpg') }}" alt="Gedung DPRD Kota Tangerang 2" class="w-full h-full object-cover object-center scale-105">
+            </div>
+
+            {{-- Gradient overlay biru institusional (#0F3460 & #174A7E) agar tetap anggun & teks sangat jelas terbaca --}}
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F3460] via-[#174A7E]/65 to-[#0F3460]/90"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0F3460]/85 via-transparent to-[#0F3460]/85"></div>
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-crimson-light/20 rounded-full blur-3xl"></div>
         </div>
 
@@ -57,6 +93,28 @@
                         @endif
                     </ul>
                 </div>
+            </div>
+
+            {{-- Indikator Titik Slide di Tengah Bawah Hero --}}
+            <div class="flex items-center justify-center gap-2.5 pt-8 sm:pt-10" role="tablist" aria-label="Navigasi Latar Belakang Hero">
+                <button 
+                    type="button"
+                    @click="goTo(0)"
+                    role="tab"
+                    :aria-selected="activeSlide === 0"
+                    aria-label="Pilih Foto Latar 1"
+                    class="h-2 rounded-full transition-all duration-300 focus:outline-none cursor-pointer"
+                    :class="activeSlide === 0 ? 'w-8 bg-accent shadow-md shadow-accent/50' : 'w-2 bg-white/40 hover:bg-white/70'"
+                ></button>
+                <button 
+                    type="button"
+                    @click="goTo(1)"
+                    role="tab"
+                    :aria-selected="activeSlide === 1"
+                    aria-label="Pilih Foto Latar 2"
+                    class="h-2 rounded-full transition-all duration-300 focus:outline-none cursor-pointer"
+                    :class="activeSlide === 1 ? 'w-8 bg-accent shadow-md shadow-accent/50' : 'w-2 bg-white/40 hover:bg-white/70'"
+                ></button>
             </div>
         </div>
     </section>
